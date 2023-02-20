@@ -9,3 +9,4 @@ C:\Users\student-ct5\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Wi
 C:\Users\student-ct5\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\student-ct5\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\student-ct5\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.InputForm.resources
+C:\Users\student-ct5\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ResultForm.resources

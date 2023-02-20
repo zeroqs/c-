@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
         InputForm input = new InputForm();
-        ResultForm calc = new ResultForm();
+        ResultForm result = new ResultForm();
 
 
         private void inputToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,23 +29,33 @@ namespace WindowsFormsApp1
         private void calcToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            calc.Show();
-            int a = Convert.ToInt32(input.textBox1.Text);
-            int b = Convert.ToInt32(input.textBox2.Text);
-            int c = Convert.ToInt32(input.textBox3.Text);
+            result.Show();
+            Hide();
+            int a = int.Parse(input.textBox1.Text);
+            int b = int.Parse(input.textBox2.Text);
+            int c = int.Parse(input.textBox3.Text);
             int p = (a + b + c) / 2;
-            int area = (int)Math.Sqrt(p * (p - a) * (p - b) * (p - c));
-            if (input.checkBox1.Checked & input.checkBox2.Checked)
+            double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            if (!double.IsNaN(area)) 
             {
-                calc.label2.Text =  $"Периметр равен {a+b+c}";
-                calc.label3.Text =  $"Площадь равна {area}";
-            } else if (input.checkBox1.Checked)
-            {
-                calc.label2.Text = $"Периметр равен {a + b + c}";
+                if (input.checkBox1.Checked & input.checkBox2.Checked)
+                {
+                    result.label2.Text = $"Периметр равен {a + b + c}";
+                    result.label3.Text = $"Площадь равна {area}";
+                }
+                else if (input.checkBox1.Checked)
+                {
+                    result.label2.Text = $"Периметр равен {a + b + c}";
+                }
+                else
+                {
+                    result.label3.Text = $"Площадь равна {area}";
+
+                }
             } else
             {
-                calc.label3.Text = $"Площадь равна {area}";
-
+                result.label2.Text = $"Периметр равен {a + b + c}";
+                result.label3.Text = $"Такого треугольника не существует";
             }
         }
 
